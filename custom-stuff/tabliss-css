@@ -1,0 +1,21 @@
+/* custom css to add in order to replicate my homepage */
+
+.Links {
+background-color: rgba(42, 43, 66, 0.8);
+ border-radius: 3px;
+ padding-left: 50px;
+ padding-right: 50px;
+ padding-top: 10px;
+ padding-bottom: 10px;
+
+}
+
+.Time {
+ margin-top: 1px;
+ margin-left: 70px;
+}
+
+.Message {
+ margin-top: 50px;
+ margin-left: 55px;
+}
