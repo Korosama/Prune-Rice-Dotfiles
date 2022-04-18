@@ -22,7 +22,7 @@ All of the necessary files needed in order to replicate my rice.
 ![prev2](prev2.jpg)
 
 <br/>
-<br/>
+
 ----------------------
 * Feel free to reach out if you need help
 * Advice is apreciated 
