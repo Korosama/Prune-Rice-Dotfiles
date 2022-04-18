@@ -1,8 +1,8 @@
 # Prune-Rice-Dotfiles
-All of the necessary files needed in order to replicate my rice. (Constantly WIP) <br/>
+All of the necessary files needed in order to replicate my rice. 
 <br/>
-<br/>
---------------------
+
+__--------------------
 Software used : 
 * Xfce + Xfwm
 * Tint2
@@ -11,7 +11,7 @@ Software used :
 * Kitty 
 * Rofi
 
---------------------
+__--------------------
 
 
 ![prev1](prev1.jpg)
