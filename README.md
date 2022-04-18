@@ -2,8 +2,8 @@
 All of the necessary files needed in order to replicate my rice. 
 <br/>
 
-__--------------------
-Software used : 
+**--------------------**
+**Software used :**
 * Xfce + Xfwm
 * Tint2
 * Librewolf + Tabliss
@@ -11,7 +11,7 @@ Software used :
 * Kitty 
 * Rofi
 
-__--------------------
+**--------------------**
 
 
 ![prev1](prev1.jpg)
@@ -23,7 +23,7 @@ __--------------------
 
 <br/>
 <br/>
-
+**--------------------**
 * Feel free to reach out if you need help
 * Advice is apreciated 
 * Do whatever you want with it, it's GPL3 Licensed 
