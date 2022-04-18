@@ -2,6 +2,16 @@
 All of the necessary files needed in order to replicate my rice. (Constantly WIP) <br/>
 <br/>
 <br/>
+--------------------
+Software used : 
+* Xfce + Xfwm
+* Tint2
+* Librewolf + Tabliss
+* Neovim
+* Kitty 
+* Rofi
+
+--------------------
 
 
 ![prev1](prev1.jpg)
