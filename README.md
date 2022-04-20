@@ -4,7 +4,7 @@ All of the necessary files needed in order to replicate my rice.
 
 -----------------------
 **Software used :**
-* Xfce + Xfwm
+* Openbox
 * Tint2
 * Librewolf + Tabliss
 * Neovim
