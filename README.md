@@ -17,12 +17,12 @@ All of the necessary files needed in order to replicate my rice.
 ![prev1](prev1.jpg)
 
 <br/>
-<br/>
 
 ![prev2](prev2.jpg)
 
 <br/>
 
+![prev3](prev3.jpg)
 ----------------------
 * Feel free to reach out if you need help
 * Advice is apreciated 
