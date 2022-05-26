@@ -42,8 +42,8 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Fleon</name>
-    <titleLayout/>
+    <name>Triste-Violet</name>
+    <titleLayout>IMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -57,57 +57,57 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
-      <name>sans</name>
+      <name>Terminus Medium</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>sans</name>
+      <name>Terminus Medium</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>sans</name>
+      <name>Terminus Medium</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>sans</name>
+      <name>Terminus Medium</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>sans</name>
+      <name>Terminus Medium</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>sans</name>
+      <name>Terminus Medium</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
   </theme>
@@ -153,8 +153,8 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>9</top>
-    <bottom>65</bottom>
+    <top>6</top>
+    <bottom>66</bottom>
     <left>18</left>
     <right>18</right>
   </margins>
@@ -316,11 +316,6 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
-    <keybind key="W-c">
-      <action name="Execute">
-        <command>rofi -show calc</command>
-      </action>
-    </keybind>
     <keybind key="W-e">
       <action name="Execute">
         <command>thunar</command>
@@ -344,7 +339,7 @@
     <keybind key="S-W-c">
       <action name="Close"/>
     </keybind>
-    <keybind key="W-A-less">
+    <keybind key="W-A-w">
       <action name="ToggleMaximize"/>
     </keybind>
   </keyboard>
@@ -376,8 +371,11 @@
         <action name="Raise"/>
         <action name="Unshade"/>
       </mousebind>
-      <mousebind button="A-Right" action="Drag">
+      <mousebind button="W-Right" action="Drag">
         <action name="Resize"/>
+      </mousebind>
+      <mousebind button="W-Left" action="Drag">
+        <action name="Move"/>
       </mousebind>
       <mousebind button="A-Middle" action="Press">
         <action name="Lower"/>
@@ -417,24 +415,7 @@
     </context>
     <context name="Titlebar">
       <mousebind button="Left" action="Drag">
-        <!-- Unsnap if snapped-->
-        <action name="if">
-          <maximizedvertical>yes</maximizedvertical>
-          <then>
-            <action name="Unmaximize"/>
-            <direction>vertical</direction>
-            <action name="MoveResizeTo">
-              <x>center</x>
-              <!-- we center windows in order to mitigate discrepancies 
-          between window placement and mouse cursor -->
-              <y>current</y>
-            </action>
-            <action name="Move"/>
-          </then>
-          <else>
-            <action name="Move"/>
-          </else>
-        </action>
+        <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
         <action name="ToggleMaximize"/>
@@ -725,7 +706,10 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
-    <!--
+    <application class="*">
+      <decor>no</decor>
+    <application>
+      <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
   # you may use one or more of the name/class/role/title/type rules to specify
@@ -756,7 +740,6 @@
     # each rule element can be left out or set to 'default' to specify to not 
     # change that attribute of the window
 
-    <decor>yes</decor>
     # enable or disable window decorations
 
     <shade>no</shade>
