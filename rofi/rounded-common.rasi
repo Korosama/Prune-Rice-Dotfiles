@@ -18,9 +18,9 @@
 window {
     location:       center;
     width:          480;
-    height:         881;
-    y-offset:       -415;
-    x-offset:      -644;
+    height:         1000;
+    y-offset:       -533;
+    x-offset:      -700;
     border-radius:  1px;
     
     background-color:   @bg0;

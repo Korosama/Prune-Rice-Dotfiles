@@ -42,8 +42,8 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Triste-Violet</name>
-    <titleLayout>IMC</titleLayout>
+    <name>1977-UltraViolet</name>
+    <titleLayout/>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -57,55 +57,55 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
-      <name>Terminus Medium</name>
+      <name>TerminessTTF NF</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>Terminus Medium</name>
+      <name>TerminessTTF NF</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>Terminus Medium</name>
+      <name>TerminessTTF NF</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>Terminus Medium</name>
+      <name>TerminessTTF NF</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Terminus Medium</name>
-      <size>9</size>
+      <name>TerminessTTF NF</name>
+      <size>7</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Terminus Medium</name>
+      <name>TerminessTTF NF</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
       <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
@@ -128,7 +128,7 @@
     <name>desktop 2</name>
     -->
     </names>
-    <popupTime>875</popupTime>
+    <popupTime>865</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -153,13 +153,13 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>6</top>
-    <bottom>66</bottom>
-    <left>18</left>
-    <right>18</right>
+    <top>8</top>
+    <bottom>62</bottom>
+    <left>14</left>
+    <right>15</right>
   </margins>
   <dock>
-    <position>Bottom</position>
+    <position>Top</position>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
     <floatingX>0</floatingX>
     <floatingY>0</floatingY>
@@ -316,6 +316,11 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
+    <keybind key="W-c">
+      <action name="Execute">
+        <command>rofi -show calc</command>
+      </action>
+    </keybind>
     <keybind key="W-e">
       <action name="Execute">
         <command>thunar</command>
@@ -339,7 +344,7 @@
     <keybind key="S-W-c">
       <action name="Close"/>
     </keybind>
-    <keybind key="W-A-w">
+    <keybind key="W-A-less">
       <action name="ToggleMaximize"/>
     </keybind>
   </keyboard>
@@ -363,7 +368,7 @@
       <mousebind button="A-Left" action="Click">
         <action name="Unshade"/>
       </mousebind>
-      <mousebind button="A-Left" action="Drag">
+      <mousebind button="W-Left" action="Drag">
         <action name="Move"/>
       </mousebind>
       <mousebind button="A-Right" action="Press">
@@ -373,9 +378,6 @@
       </mousebind>
       <mousebind button="W-Right" action="Drag">
         <action name="Resize"/>
-      </mousebind>
-      <mousebind button="W-Left" action="Drag">
-        <action name="Move"/>
       </mousebind>
       <mousebind button="A-Middle" action="Press">
         <action name="Lower"/>
@@ -415,7 +417,24 @@
     </context>
     <context name="Titlebar">
       <mousebind button="Left" action="Drag">
-        <action name="Move"/>
+        <!-- Unsnap if snapped-->
+        <action name="if">
+          <maximizedvertical>yes</maximizedvertical>
+          <then>
+            <action name="Unmaximize"/>
+            <direction>vertical</direction>
+            <action name="MoveResizeTo">
+              <x>center</x>
+              <!-- we center windows in order to mitigate discrepancies 
+          between window placement and mouse cursor -->
+              <y>current</y>
+            </action>
+            <action name="Move"/>
+          </then>
+          <else>
+            <action name="Move"/>
+          </else>
+        </action>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
         <action name="ToggleMaximize"/>
@@ -708,8 +727,8 @@
   <applications>
     <application class="*">
       <decor>no</decor>
-    <application>
-      <!--
+    </application>
+    <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
   # you may use one or more of the name/class/role/title/type rules to specify
@@ -740,6 +759,7 @@
     # each rule element can be left out or set to 'default' to specify to not 
     # change that attribute of the window
 
+<decor>no</decor>
     # enable or disable window decorations
 
     <shade>no</shade>
@@ -801,6 +821,6 @@
   </application>
 
   # end of the example
--->
+    -->
   </applications>
 </openbox_config>

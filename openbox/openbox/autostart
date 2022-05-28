@@ -1,8 +1,0 @@
-nitrogen --restore &
-tint2 &
-picom &
-nm-applet&
-blueman-applet &
-dunst -conf /home/korosama/.config/dunst/mechanical.artistic.dunstrc &
-xclip & 
-keepassxc 
